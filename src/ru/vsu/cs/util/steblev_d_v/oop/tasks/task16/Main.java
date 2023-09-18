@@ -17,7 +17,7 @@ public class Main {
 
         WriteOnlyList<Integer> test = new WriteOnlyList<>(list);
         test.get(1);
-        //        List<Integer> list1 = new LinkedList<>();
+                List<Integer> list1 = new LinkedList<>();
 //
 //
 //        SingletonList single = new SingletonList(1);
