@@ -15,24 +15,27 @@ public class Main {
         list.add(2);
         list.add(3);
 
-        List<Integer> list1 = new LinkedList<>();
-
-
-        SingletonList single = new SingletonList(1);
-        single.get(1);
-
-        System.out.println(single);
-        ReadOnlyList<Integer> read0 = new ReadOnlyList<>(list);
-        ReadOnlyList<Integer> read = new ReadOnlyList<>(list1);
-
-        list.add(1);
-        list1.add(1);
-        System.out.println(list);
-        System.out.println(list1);
+        WriteOnlyList<Integer> test = new WriteOnlyList<>(list);
+        test.get(1);
+        //        List<Integer> list1 = new LinkedList<>();
 //
-        read0.toString();
-        System.out.println(read0);
-//        read.get(0);
+//
+//        SingletonList single = new SingletonList(1);
+//        single.get(0);
+//
+//
+//        System.out.println(single);
+//        ReadOnlyList<Integer> read0 = new ReadOnlyList<>(list);
+//        ReadOnlyList<Integer> read = new ReadOnlyList<>(list1);
+//
+//        list.add(1);
+//        list1.add(1);
+//        System.out.println(list);
+//        System.out.println(list1);
+////
+//        read0.toString();
+//        System.out.println(read0);
+////        read.get(0);
 
     }
 }
