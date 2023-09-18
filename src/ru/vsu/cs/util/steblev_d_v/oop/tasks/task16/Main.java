@@ -5,6 +5,7 @@ package ru.vsu.cs.util.steblev_d_v.oop.tasks.task16;
  */
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -15,6 +16,12 @@ public class Main {
         list.add(3);
 
         List<Integer> list1 = new LinkedList<>();
+
+
+        SingletonList single = new SingletonList(1);
+        single.get(1);
+
+        System.out.println(single);
         ReadOnlyList<Integer> read0 = new ReadOnlyList<>(list);
         ReadOnlyList<Integer> read = new ReadOnlyList<>(list1);
 
@@ -23,9 +30,9 @@ public class Main {
         System.out.println(list);
         System.out.println(list1);
 //
-        read.add(1);
-        read0.add(1);
-        read.get(0);
-        System.out.println(read.get(0));
+        read0.toString();
+        System.out.println(read0);
+//        read.get(0);
+
     }
 }
