@@ -23,7 +23,7 @@ public class WriteOnlyList<T> implements List<T> {
     @Override
     // Включает ли список в себя данный элемент
     public boolean contains(Object o) {
-        return list.contains(o);
+        throw new UnsupportedOperationException("List is readOnly!");
     }
 
     @Override
@@ -46,73 +46,75 @@ public class WriteOnlyList<T> implements List<T> {
 
     @Override
     public boolean add(T t) {
-        throw new UnsupportedOperationException("List is readOnly!");
+        return list.add(t);
     }
 
     @Override
     public boolean remove(Object o) {
-        throw new UnsupportedOperationException("List is readOnly!");
+        throw new UnsupportedOperationException("List is WriteOnly!");
     }
 
     @Override
+    // Проверка содержит ли список указанные элементы;
     public boolean containsAll(Collection<?> c) {
-        return list.containsAll(c);
+        throw new UnsupportedOperationException("List is WriteOnly!");
     }
 
     @Override
     public boolean addAll(Collection<? extends T> c) {
-        throw new UnsupportedOperationException("List is readOnly!");
+        return list.addAll(c);
     }
 
     @Override
     public boolean addAll(int index, Collection<? extends T> c) {
-        throw new UnsupportedOperationException("List is readOnly!");
+        return list.addAll(index, c);
     }
 
     @Override
+    // Задать вопрос !
     public boolean removeAll(Collection<?> c) {
-        throw new UnsupportedOperationException("List is readOnly!");
+        throw new UnsupportedOperationException("List is writeOnly!");
     }
 
     @Override
     public boolean retainAll(Collection<?> c) {
-        throw new UnsupportedOperationException("List is readOnly!");
+        throw new UnsupportedOperationException("List is writeOnly!");
 
     }
 
     @Override
     public void clear() {
-        throw new UnsupportedOperationException("List is readOnly!");
+        list.clear();
     }
 
     @Override
     public T get(int index) {
-        return list.get(index);
+        throw new UnsupportedOperationException("List is writeOnly!");
     }
 
     @Override
     public T set(int index, T element) {
-        throw new UnsupportedOperationException("List is readOnly!");
+       return list.set(index, element);
     }
 
     @Override
     public void add(int index, T element) {
-        throw new UnsupportedOperationException("List is readOnly!");
+        list.add(index, element);
     }
 
     @Override
     public T remove(int index) {
-        throw new UnsupportedOperationException("List is readOnly!");
+        throw new UnsupportedOperationException("List is writeOnly!");
     }
 
     @Override
     public int indexOf(Object o) {
-        return list.indexOf(o);
+        throw new UnsupportedOperationException("List is writeOnly!");
     }
 
     @Override
     public int lastIndexOf(Object o) {
-        return list.lastIndexOf(o);
+        throw new UnsupportedOperationException("List is writeOnly!");
     }
 
     @Override
@@ -126,13 +128,14 @@ public class WriteOnlyList<T> implements List<T> {
     }
 
     @Override
+    // Возврат части от...до.
     public List<T> subList(int fromIndex, int toIndex) {
-        return list.subList(fromIndex, toIndex);
+        throw new UnsupportedOperationException("List is writeOnly!");
     }
 
     @Override
     public String toString() {
-        return "readOnlyList = " + list;
+        return "writeOnlyList = " + list;
 
     }
 }
